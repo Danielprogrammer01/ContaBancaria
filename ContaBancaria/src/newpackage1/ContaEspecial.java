@@ -27,7 +27,7 @@ public class ContaEspecial extends Conta {
         if (quantia <= limiteEmprestimo) {
 
             limiteEmprestimo -= quantia;
-            setSaldo(getSaldo() + quantia);
+            setSaldo(getSaldo() + quantia - 10.0);
             System.out.println("Empréstimo realizado com sucesso!");
             System.out.println(this);
 
@@ -53,10 +53,10 @@ public class ContaEspecial extends Conta {
                     return;
                 }
             } else {
-                setSaldo(getSaldo() - quantia + 5.0f);
+                setSaldo(getSaldo() - quantia + 5.0);
             }
             System.out.println("Saque realizado com sucesso!");
-            System.out.println(this); // Exibe os dados da conta após o saque
+            System.out.println(this); 
         } else {
             System.out.println("Saldo e limite de empréstimo insuficientes para realizar o saque.");
         }
@@ -107,6 +107,7 @@ public class ContaEspecial extends Conta {
 
         } else {
             System.out.println("Opção inválida! ");
+            sc.close();
             return null;
         }
 
@@ -183,6 +184,7 @@ public class ContaEspecial extends Conta {
 
         } while (codigo != 5);
 
+        sc.close();
     }
 
 }

@@ -10,8 +10,8 @@ public class App {
 
         Scanner sc = new Scanner(System.in);
         int codigo;
-        Conta conta = new Conta();
-        ContaEspecial contaEspecial = new ContaEspecial();
+        Conta conta = null;
+        ContaEspecial contaEspecial = null;
 
         do {
             System.out.println("------------------------");
@@ -28,16 +28,18 @@ public class App {
             switch (codigo) {
 
                 case 1:
-
-                    conta.criarConta();
+                    
+                    conta = new Conta();
+                    conta = conta.criarConta();
 
                     conta.menu();
                     
                     break;
 
                 case 2:
-
-                    contaEspecial.criarConta();
+                    
+                    contaEspecial = new ContaEspecial();
+                    contaEspecial = contaEspecial.criarConta();
                     
                     contaEspecial.menu();
 

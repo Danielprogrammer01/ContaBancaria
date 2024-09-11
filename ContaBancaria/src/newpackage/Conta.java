@@ -33,7 +33,7 @@ public class Conta {
 
     public void saque(double quantia) {
 
-        saldo -= quantia + 5.0f;
+        saldo -= quantia + 5.0;
         System.out.println("Saque realizado com sucesso!");
         System.out.println(this);
 
@@ -63,6 +63,8 @@ public class Conta {
     }
     
     public Conta criarConta() {
+        
+        Scanner sc = new Scanner(System.in);
 
         System.out.println("Digite o número da conta: ");
         int numero = sc.nextInt();
@@ -95,6 +97,7 @@ public class Conta {
 
         System.out.println("Conta criada com sucesso!");
         System.out.println(this);
+        sc.close();
         return this;
     }
 
@@ -155,6 +158,8 @@ public class Conta {
             }
 
         } while (codigo != 4);
+        
+        sc.close();
 
     }
 
